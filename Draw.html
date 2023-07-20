@@ -1,75 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Author" content="Emmanuel Obiechina">
-    <meta name="Description" content="Basic Drawing tool">
-    <link rel="stylesheet" href="./draw.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Emmanuel Obiechina" />
+    <meta name="Description" content="Basic Drawing tool" />
+    <link rel="stylesheet" href="./draw.css" />
     <script src="./draw.js" defer></script>
     <title>Basic Drawing Tool</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <section class="tool-board">
-            <div class="row">
-                <label for="" class="title">Shapes</label>
-                <ul class="options">
-                    <li class="option tool" id="rectangle">
-                        <img src="./assests//rec.png" width="30px" height="30px"  alt="Image of a rectangle">
-                        <span>Rectangle</span>
-                    </li>
-                    <li class="option tool" id=" circle">
-                        <img src="./assests//circle.png" width="30px" height="30px"  alt="image of a circle">
-                        <span>Circle</span>
-                    </li>
-                    <li class="option tool" id="triangle">
-                        <img src="./assests//traingle.png" width="30px" height="30px"  alt="image of a triangle">
-                        <span>Triangle</span>
-                    </li>
-                    <li class="option " id=" fill-color">
-                        <input type="checkbox" id="fill-check">
-                        <label for="fill-check">Fill color</label>
-                    </li>
-                </ul>
-            </div>
-             <div class="row">
-                <label for="" class="title">Options</label>
-                <ul class="options">
-                    <li class="option tool" id="brush">
-                        <img src="./assests//brush.png" class="active" width="30px" height="30px" alt="Image of a rectangle">
-                        <span>brush</span>
-                    </li>
-                    <li class="option tool" id="eraser">
-                        <img src="./assests//eraser.png" width="30px" height="30px"  alt="image of a circle">
-                        <span>eraser</span>
-                    </li>
-                    <li class="option tool" id="range">
-                        <input type="range" id="slide-range" min="1" max="10" value="5">
-                        <label for="slide-range"></label>
-                    </li>
-                </ul>
-            </div>
-            <div class="row colors">
-                <label for="" class="title">Colors</label>
-                <ul class="options">
-                    <li class="option"></li>
-                    <li class="option selected"></li>
-                    <li class="option"></li>
-                    <li class="option"></li>
-                    <li class="option">
-                        <input type="color" id="color-picker" value="#4a98f7">
-                    </li>
-                </ul>
-            </div>
-            <div class="row buttons">
-                <button class="clear-canvas">Clear Canva</button>
-                <button class="save-img">Save Image</button>
-            </div>
-        </section>
-        <section class="drawing-board">
-            <canvas></canvas>
-        </section>
+      <section class="drawing-board">
+        <canvas></canvas>
+      </section>
+      <div class=" buttons">
+        <button class="clear-canvas">Clear Canva</button>
+        <button class="save-img">Save Image</button>
+      </div>
+      <section class="tool-board">
+        <div class="tool-wrapper">
+          <div class="row">
+            <ul class="options">
+              <!-- <li class="option tool" id="rectangle">
+                <img
+                  src="./assests//rec.png"
+                  width="30px"
+                  height="30px"
+                  alt="Image of a rectangle"
+                />
+                <span>Rectangle</span>
+              </li>
+              <li class="option tool" id=" circle">
+                <img
+                  src="./assests//circle.png"
+                  width="30px"
+                  height="30px"
+                  alt="image of a circle"
+                />
+                <span>Circle</span>
+              </li>
+              <li class="option tool" id="triangle">
+                <img
+                  src="./assests//traingle.png"
+                  width="30px"
+                  height="30px"
+                  alt="image of a triangle"
+                />
+                <span>Triangle</span>
+              </li>
+              <li class="option" id=" fill-color">
+                <input type="checkbox" id="fill-check" />
+                <label for="fill-check">Fill color</label>
+              </li> -->
+              <li class="option tool" id="brush">
+                <img
+                  src="./assests//brush.png"
+                  class="active"
+                  width="30px"
+                  height="30px"
+                  alt="Image of a rectangle"
+                />
+               
+              </li>
+              <li class="option tool" id="eraser">
+                <img
+                  src="./assests//eraser.png"
+                  width="30px"
+                  height="30px"
+                  alt="image of a circle"
+                />
+               
+              </li>
+              <li class="option tool" id="range">
+                <input
+                  type="range"
+                  id="slide-range"
+                  min="1"
+                  max="10"
+                  value="5"
+                />
+                <label for="slide-range"></label>
+              </li>
+              <li class="option"></li>
+              <li class="option selected"></li>
+              <li class="option"></li>
+              <li class="option"></li>
+              <li class="option">
+                <input type="color" id="color-picker" value="#4a98f7" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
-</body>
+  </body>
 </html>

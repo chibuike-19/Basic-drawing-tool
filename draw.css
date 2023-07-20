@@ -1,30 +1,86 @@
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(to right bottom, #33FFCC, #7081FF)
+
   /* background: #33FFCC; */
 }
 .container {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  padding: 8px;
-  max-width: 1025px;
+  min-height: 100vh;
+  position: relative;
 }
 section {
   background: white;
   border-radius: 7px;
 }
 .drawing-board {
-  flex: 1;
+  width: 100%;
+  height: 100vh;
 }
 .tool-board {
-  width: 210px;
-  padding: 15px 22px 0;
+  position: absolute;
+  top: calc(
+    100vh - 100px
+  ); /* Centered vertically using 50% of viewport height minus 50px */
+  
 }
-.tool-board .row {
+.tool-wrapper {
+  display: flex;
+  justify-content: center;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+.options {
+  display: flex;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 8px;
+}
+.buttons {
+  position: absolute;
+  bottom: calc(100vh - 150px);
+  left: calc(100% - 150px);
+}
+.buttons button {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 11px 0;
+  font-size: 0.9rem;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 5px;
+}
+.buttons .clear-canvas {
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+.buttons .save-img {
+  color: #4a98f7;
+  border: 1px solid #4a98f7;
+}
+.clear-canvas:hover {
+  color: #fff;
+  background: #6c757d;
+}
+.save-img:hover {
+  color: #fff;
+  background: #4a98f7;
+}
+#color-picker {
+  cursor: pointer;
+}
+.colors .option {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 100%;
+  margin-top: 3px;
+  position: relative;
+}
+/* .tool-board .row {
   margin-bottom: 20px;
 }
 .row .options {
@@ -36,8 +92,8 @@ section {
   cursor: pointer;
   align-items: center;
   margin-bottom: 10px;
-}
-.option :where(span, label) {
+} */
+/* .option :where(span, label) {
   color: #5a6168;
   cursor: pointer;
   padding: 10px;
@@ -109,33 +165,7 @@ section {
   display: flex;
   justify-content: space-between;
 }
-.buttons button {
-  width: 100%;
-  color: #fff;
-  border: none;
-  outline: none;
-  padding: 11px 0;
-  font-size: 0.9rem;
-  margin-bottom: 13px;
-  background: none;
-  border-radius: 5px;
-}
-.buttons .clear-canvas {
-  color: #6c757d;
-  border: 1px solid #6c757d;
-}
-.buttons .save-img {
-  color: #4a98f7;
-  border: 1px solid #4a98f7;
-}
-.clear-canvas:hover {
-  color: #fff;
-  background: #6c757d;
-}
-.save-img:hover {
-  color: #fff;
-  background: #4a98f7;
-}
+
 #color-picker {
   opacity: 0;
   cursor: pointer;
@@ -143,16 +173,15 @@ section {
 .drawing-board canvas {
   width: 100%;
   height: 100%;
-}
+} */
 @media screen and (max-width: 900px) {
-  .container{
+  .container {
     flex-direction: column-reverse;
   }
-  .tool-board{
+  .tool-board {
     display: flex;
     width: 95%;
   }
-
 }
 
 /*  */
