@@ -14,7 +14,17 @@
       <section class="drawing-board">
         <canvas></canvas>
       </section>
-      <div class=" buttons">
+      <div>
+        <img
+          src="./assests/icons8-hamburger-menu.svg"
+          width="35rem"
+          id="menu-icon"
+          height="35rem"
+          class="menu-icon"
+          alt=""
+        />
+      </div>
+      <div class="buttons hidden-btn">
         <button class="clear-canvas">Clear Canva</button>
         <button class="save-img">Save Image</button>
       </div>
@@ -55,13 +65,12 @@
               </li> -->
               <li class="option tool" id="brush">
                 <img
-                  src="./assests//brush.png"
+                  src="./assests/pen.png"
                   class="active"
-                  width="30px"
-                  height="30px"
+                  width="40px"
+                  height="40px"
                   alt="Image of a rectangle"
                 />
-               
               </li>
               <li class="option tool" id="eraser">
                 <img
@@ -70,9 +79,16 @@
                   height="30px"
                   alt="image of a circle"
                 />
-               
               </li>
-              <li class="option tool" id="range">
+              <li class="option tool" id="rectangle">
+                <img
+                  src="./assests//rec.png"
+                  width="30px"
+                  height="30px"
+                  alt="Image of a rectangle"
+                />
+              </li>
+              <!-- <li class="option tool" id="range">
                 <input
                   type="range"
                   id="slide-range"
@@ -81,12 +97,8 @@
                   value="5"
                 />
                 <label for="slide-range"></label>
-              </li>
-              <li class="option"></li>
-              <li class="option selected"></li>
-              <li class="option"></li>
-              <li class="option"></li>
-              <li class="option">
+              </li> -->
+              <li class="option color-picker">
                 <input type="color" id="color-picker" value="#4a98f7" />
               </li>
             </ul>
