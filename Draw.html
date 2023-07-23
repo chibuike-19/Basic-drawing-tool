@@ -28,45 +28,17 @@
         <button class="clear-canvas">Clear Canva</button>
         <button class="save-img">Save Image</button>
       </div>
+
       <section class="tool-board">
         <div class="tool-wrapper">
           <div class="row">
             <ul class="options">
-              <!-- <li class="option tool" id="rectangle">
-                <img
-                  src="./assests//rec.png"
-                  width="30px"
-                  height="30px"
-                  alt="Image of a rectangle"
-                />
-                <span>Rectangle</span>
-              </li>
-              <li class="option tool" id=" circle">
-                <img
-                  src="./assests//circle.png"
-                  width="30px"
-                  height="30px"
-                  alt="image of a circle"
-                />
-                <span>Circle</span>
-              </li>
-              <li class="option tool" id="triangle">
-                <img
-                  src="./assests//traingle.png"
-                  width="30px"
-                  height="30px"
-                  alt="image of a triangle"
-                />
-                <span>Triangle</span>
-              </li>
-              <li class="option" id=" fill-color">
-                <input type="checkbox" id="fill-check" />
-                <label for="fill-check">Fill color</label>
-              </li> -->
-              <li class="option tool" id="brush">
+              <!-- 
+               -->
+              <li class="option tool active" id="brush">
                 <img
                   src="./assests/pen.png"
-                  class="active"
+                  class="selected"
                   width="40px"
                   height="40px"
                   alt="Image of a rectangle"
@@ -80,27 +52,78 @@
                   alt="image of a circle"
                 />
               </li>
-              <li class="option tool" id="rectangle">
+              <li class="option tool" id="shape-item">
                 <img
                   src="./assests//rec.png"
                   width="30px"
                   height="30px"
+                  class="main-img"
                   alt="Image of a rectangle"
                 />
               </li>
-              <!-- <li class="option tool" id="range">
-                <input
-                  type="range"
-                  id="slide-range"
-                  min="1"
-                  max="10"
-                  value="5"
-                />
+              <!--
                 <label for="slide-range"></label>
               </li> -->
               <li class="option color-picker">
-                <input type="color" id="color-picker" value="#4a98f7" />
+                <input type="color" id="color-picker" value="black" />
               </li>
+            </ul>
+          </div>
+          <div class="hidden-btn shapes-options">
+            <span style="padding: 12px;">shapes</span>
+            <ul class="shapes-lists options">
+              <div class="shapes-container">
+                <li class=" tool" id="rectangle">
+                  <img
+                    src="./assests//rec.png"
+                    width="20px"
+                    height="20px"
+                    class="shapes"
+                    alt="Image of a rectangle"
+                  />
+                  <!-- <span>Rectangle</span> -->
+                </li>
+                <li class=" tool active" id=" circle">
+                  <img
+                    src="./assests//circle.png"
+                    width="20px"
+                    class="shapes"
+                    height="20px"
+                    alt="image of a circle"
+                  />
+                  <!-- <span>Circle</span> -->
+                </li>
+                <li class=" tool" id="triangle">
+                  <img
+                    src="./assests//traingle.png"
+                    width="20px"
+                    class="shapes"
+                    height="20px"
+                    alt="image of a triangle"
+                  />
+                  <!-- <span>Triangle</span> -->
+                </li>
+              </div>
+
+              <div class="range-conatiner">
+                <li class=" tool" id="range">
+                  <input
+                    type="range"
+                    id="slide-range"
+                    min="1"
+                    max="10"
+                    value="5"
+                  />
+                  <span>brush range</span>
+                </li>
+              </div>
+
+              <div class="fill-container">
+                <li class="option" id="fill-color">
+                  <span>Fill color</span>
+                  <input type="checkbox" id="fill-check" />
+                </li>
+              </div>
             </ul>
           </div>
         </div>

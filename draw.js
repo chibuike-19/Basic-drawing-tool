@@ -2,12 +2,15 @@ const canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d", { willReadFrequently: true });
 const fillColor = document.querySelector("#fill-check");
 const toolBtn = document.querySelectorAll(".tool");
+const shapesBtn = document.querySelector("#shape-item");
 const menuIcon = document.getElementById("menu-icon");
 const btnContainer = document.querySelector(".buttons");
 const colorBtn = document.querySelector(".color-picker");
 let colorPicker = document.querySelector("#color-picker");
 let clearCanvas = document.querySelector(".clear-canvas");
 let saveImage = document.querySelector(".save-img");
+const mainImg = document.querySelector('.main-img')
+const shapesImg = document.querySelectorAll('.shapes')
 const slider = document.querySelector("#slide-range");
 
 let prevMouseX, prevMouseY, snapshot;
@@ -29,21 +32,21 @@ window.addEventListener("load", () => {
 });
 
 const drawRectangle = (e) => {
-  // if (!fillColor.checked) {
+  if (!fillColor.checked) {
   ctx.strokeRect(
     e.offsetX,
     e.offsetY,
     prevMouseX - e.offsetX,
     prevMouseY - e.offsetY
   );
-  // } else {
-  //   ctx.fillRect(
-  //     e.offsetX,
-  //     e.offsetY,
-  //     prevMouseX - e.offsetX,
-  //     prevMouseY - e.offsetY
-  //   );
-  // }
+  } else {
+    ctx.fillRect(
+      e.offsetX,
+      e.offsetY,
+      prevMouseX - e.offsetX,
+      prevMouseY - e.offsetY
+    );
+  }
 };
 
 const drawCircle = (e) => {
@@ -141,11 +144,29 @@ menuIcon.addEventListener("click", () => {
 
 document.addEventListener("click", (event) => {
   if (event.target !== btnContainer && event.target !== menuIcon) {
-    toggleButton.classList.add("hidden");
+    btnContainer.classList.add("hidden-btn");
     menuIcon.src = "./assests/icons8-hamburger-menu.svg";
   }
 });
-// slider.addEventListener('change', () => brushWidth = slider.value)
+
+document.addEventListener("click", (event) => {
+  const element = document.querySelector(".shapes-options");
+  if (event.target !== element && event.target !== mainImg) {
+    element.classList.add("hidden-btn");
+  }
+});
+
+shapesBtn.addEventListener('click', () => {
+    const element = document.querySelector(".shapes-options")
+    element.classList.toggle('hidden-btn')
+})
+
+shapesImg.forEach((img) => {
+  img.addEventListener('click', () => {
+    mainImg.src = img.src
+  })
+})
+slider.addEventListener('change', () => brushWidth = slider.value)
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mouseup", () => (isDrawing = false));

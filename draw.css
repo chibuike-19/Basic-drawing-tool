@@ -28,6 +28,7 @@ section {
   justify-content: space-around;
 }
 .tool-wrapper {
+  position: relative;
   /* display: flex;
   justify-content: center; */
 }
@@ -37,7 +38,7 @@ canvas {
 }
 .options {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   list-style: none;
   align-items: center;
   background-color: rgba(223, 219, 219, 0.344);
@@ -46,11 +47,38 @@ canvas {
   -webkit-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  padding: 8px;
+  padding: 8px 12px;
 }
 .options .option {
   cursor: pointer;
 }
+.options .option:nth-child(1):hover {
+  border: 1px solid #d8dada;
+  border-radius: 6px;
+  background-color: #d8dada;
+}
+.options .option:nth-child(2):hover {
+  border: 1px solid #d8dada;
+  border-radius: 6px;
+  padding: 4px;
+  background-color: #d8dada;
+}
+.options .option:nth-child(3):hover {
+  border: 1px solid #d8dada;
+  border-radius: 6px;
+  padding: 4px;
+  background-color: #d8dada;
+}
+#brush {
+  padding: 0px !important;
+}
+.options .active {
+  border: 1px solid #d8dada;
+  border-radius: 6px;
+  padding: 4px;
+  background-color: #d8dada;
+}
+
 .buttons {
   position: absolute;
   bottom: calc(100vh - 170px);
@@ -63,6 +91,7 @@ canvas {
   outline: none;
   padding: 11px 0;
   font-size: 0.9rem;
+  cursor: pointer;
   margin-bottom: 13px;
   background: none;
   border-radius: 5px;
@@ -96,7 +125,7 @@ canvas {
   position: relative;
 }
 .color-picker {
-  background-color: #4a98f7;
+  background-color: black;
   width: 30px;
   height: 30px;
   border: 1px solid black;
@@ -105,10 +134,51 @@ canvas {
 .menu-icon {
   position: absolute;
   bottom: calc(100vh - 40px);
-  left: calc(100% - 80px);
+  left: calc(100% - 50px);
+  cursor: pointer;
 }
 .hidden-btn {
   display: none;
+}
+.shapes-options {
+  position: absolute;
+  background-color: #d8dada;
+  border-radius: 8px;
+  border: 1px solid #d8dada;
+  bottom: calc(100vh - 650px);
+  right: calc(100% - 240px);
+}
+.shapes-lists {
+  list-style: none;
+  margin: 0px;
+  cursor: pointer;
+  box-shadow: none!important;
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+.shapes-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+#range{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+}
+#fill-color {
+  display: flex;
+  align-content: center;
+  justify-content: start;
+  width: 100%;
+}
+.fill-container {
+  display: flex;
+  width: 100%;
+  justify-content: start;
 }
 /* .tool-board .row {
   margin-bottom: 20px;
