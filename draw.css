@@ -1,7 +1,9 @@
 body {
-  min-height: 100vh;
-
-  /* background: #33FFCC; */
+  height: 100vh;
+  background: #03490e;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 .container {
   min-height: 100vh;
@@ -22,6 +24,7 @@ section {
   top: calc(
     100vh - 100px
   ); /* Centered vertically using 50% of viewport height minus 50px */
+
 }
 .row {
   display: flex;
@@ -34,7 +37,7 @@ section {
 }
 canvas {
   width: 100%;
-  height: 100%;
+  height: 99vh;
 }
 .options {
   display: flex;
