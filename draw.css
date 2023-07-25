@@ -1,6 +1,5 @@
 body {
   height: 100vh;
-  background: #03490e;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -10,7 +9,6 @@ body {
   position: relative;
 }
 section {
-  background: white;
   border-radius: 7px;
 }
 .drawing-board {
@@ -23,8 +21,7 @@ section {
   justify-content: space-around;
   top: calc(
     100vh - 100px
-  ); /* Centered vertically using 50% of viewport height minus 50px */
-
+  );
 }
 .row {
   display: flex;
@@ -32,20 +29,17 @@ section {
 }
 .tool-wrapper {
   position: relative;
-  /* display: flex;
-  justify-content: center; */
 }
 canvas {
-  width: 100%;
+  width: inherit;
   height: 99vh;
 }
 .options {
   display: flex;
+  align-items: center;
   gap: 25px;
   list-style: none;
-  align-items: center;
   background-color: rgba(223, 219, 219, 0.344);
-  border: 1px solid rgba(223, 219, 219, 0.344);
   box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
@@ -54,34 +48,21 @@ canvas {
 }
 .options .option {
   cursor: pointer;
-}
-.options .option:nth-child(1):hover {
-  border: 1px solid #d8dada;
   border-radius: 6px;
-  background-color: #d8dada;
+  padding: 5px;
+  transition: ease-in-out 0.4s;
 }
-.options .option:nth-child(2):hover {
-  border: 1px solid #d8dada;
-  border-radius: 6px;
-  padding: 4px;
-  background-color: #d8dada;
-}
-.options .option:nth-child(3):hover {
-  border: 1px solid #d8dada;
-  border-radius: 6px;
-  padding: 4px;
+.options .option:hover,
+.options .option.active {
   background-color: #d8dada;
 }
 #brush {
   padding: 0px !important;
 }
 .options .active {
-  border: 1px solid #d8dada;
   border-radius: 6px;
-  padding: 4px;
   background-color: #d8dada;
 }
-
 .buttons {
   position: absolute;
   bottom: calc(100vh - 170px);
@@ -131,13 +112,12 @@ canvas {
   background-color: black;
   width: 30px;
   height: 30px;
-  border: 1px solid black;
   border-radius: 50%;
 }
 .menu-icon {
   position: absolute;
-  bottom: calc(100vh - 40px);
-  left: calc(100% - 50px);
+  bottom: calc(100vh - 50px);
+  left: calc(100% - 70px);
   cursor: pointer;
 }
 .hidden-btn {
@@ -155,10 +135,9 @@ canvas {
   list-style: none;
   margin: 0px;
   cursor: pointer;
-  box-shadow: none!important;
+  box-shadow: none !important;
   display: flex;
   flex-direction: column;
-
   gap: 8px;
 }
 .shapes-container {
@@ -167,7 +146,7 @@ canvas {
   align-items: center;
   width: 100%;
 }
-#range{
+#range {
   display: flex;
   flex-direction: column-reverse;
   gap: 6px;
@@ -183,100 +162,6 @@ canvas {
   width: 100%;
   justify-content: start;
 }
-/* .tool-board .row {
-  margin-bottom: 20px;
-}
-.row .options {
-  list-style: none;
-  margin: 10px 0 0 5px;
-}
-.row .options .option {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  margin-bottom: 10px;
-} */
-/* .option :where(span, label) {
-  color: #5a6168;
-  cursor: pointer;
-  padding: 10px;
-}
-.option #fill-color {
-  cursor: pointer;
-  height: 14px;
-  width: 14px;
-}
-#fill-color:checked ~ label {
-  color: #4a98f7;
-}
-.option:is(:hover, .active) img {
-  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(90deg)
-    brightness(100%) contrast(100%);
-}
-.option:is(:hover, .active) :where(span, label) {
-  color: #4a98f7;
-}
-.option #slide-range {
-  height: 4px;
-  width: 100%;
-  margin-top: 20px;
-}
-.colors .option {
-  height: 20px;
-  width: 20px;
-  background-color: red;
-  border-radius: 100%;
-  margin-top: 3px;
-  position: relative;
-}
-.colors .option.selected::before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  height: 12px;
-  width: 12px;
-  background-color: inherit;
-  border-radius: inherit;
-  border: 2px solid white;
-  transform: translate(-50%, -50%);
-}
-.colors .option:first-child.selected::before {
-  border-color: #ccc;
-}
-.colors .option:nth-child(1) {
-  background-color: white;
-  border: 1px solid black;
-}
-.colors .option:nth-child(2) {
-  background-color: black;
-  border: 1px solid black;
-}
-.colors .option:nth-child(3) {
-  background-color: #e02020;
-  border: 1px solid black;
-}
-.colors .option:nth-child(4) {
-  background-color: #6dd400;
-  border: 1px solid black;
-}
-.colors .option:nth-child(5) {
-  background-color: #4a98f7;
-  border: 1px solid black;
-}
-.colors .options {
-  display: flex;
-  justify-content: space-between;
-}
-
-#color-picker {
-  opacity: 0;
-  cursor: pointer;
-}
-.drawing-board canvas {
-  width: 100%;
-  height: 100%;
-} */
 @media screen and (max-width: 900px) {
   .container {
     flex-direction: column-reverse;
@@ -286,5 +171,3 @@ canvas {
     width: 95%;
   }
 }
-
-/*  */

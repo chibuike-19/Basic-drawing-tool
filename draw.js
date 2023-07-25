@@ -9,8 +9,8 @@ const colorBtn = document.querySelector(".color-picker");
 let colorPicker = document.querySelector("#color-picker");
 let clearCanvas = document.querySelector(".clear-canvas");
 let saveImage = document.querySelector(".save-img");
-const mainImg = document.querySelector('.main-img')
-const shapesImg = document.querySelectorAll('.shapes')
+const mainImg = document.querySelector(".main-img");
+const shapesImg = document.querySelectorAll(".shapes");
 const slider = document.querySelector("#slide-range");
 
 let prevMouseX, prevMouseY, snapshot;
@@ -33,12 +33,12 @@ window.addEventListener("load", () => {
 
 const drawRectangle = (e) => {
   if (!fillColor.checked) {
-  ctx.strokeRect(
-    e.offsetX,
-    e.offsetY,
-    prevMouseX - e.offsetX,
-    prevMouseY - e.offsetY
-  );
+    ctx.strokeRect(
+      e.offsetX,
+      e.offsetY,
+      prevMouseX - e.offsetX,
+      prevMouseY - e.offsetY
+    );
   } else {
     ctx.fillRect(
       e.offsetX,
@@ -156,17 +156,17 @@ document.addEventListener("click", (event) => {
   }
 });
 
-shapesBtn.addEventListener('click', () => {
-    const element = document.querySelector(".shapes-options")
-    element.classList.toggle('hidden-btn')
-})
+shapesBtn.addEventListener("click", () => {
+  const element = document.querySelector(".shapes-options");
+  element.classList.toggle("hidden-btn");
+});
 
 shapesImg.forEach((img) => {
-  img.addEventListener('click', () => {
-    mainImg.src = img.src
-  })
-})
-slider.addEventListener('change', () => brushWidth = slider.value)
+  img.addEventListener("click", () => {
+    mainImg.src = img.src;
+  });
+});
+slider.addEventListener("change", () => (brushWidth = slider.value));
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
