@@ -17,7 +17,7 @@ let prevMouseX, prevMouseY, snapshot;
 let isDrawing = false;
 let brushWidth = 2;
 let selectedTool = "brush";
-let selectedColor = "rgb(0, 0, 0)";
+let selectedColor = "#030303";
 
 const setBackGroundColor = () => {
   ctx.fillStyle = "#fff";
@@ -104,15 +104,10 @@ toolBtn.forEach((btn) => {
   });
 });
 
-colorBtn.addEventListener("click", () => {
-  colorBtn.classList.add("selected");
-  selectedColor = window
-    .getComputedStyle(colorBtn)
-    .getPropertyValue("background-color");
-});
 
 colorPicker.addEventListener("change", () => {
   colorPicker.parentElement.style.backgroundColor = colorPicker.value;
+  selectedColor = colorPicker.value
   colorPicker.parentElement.click();
 });
 

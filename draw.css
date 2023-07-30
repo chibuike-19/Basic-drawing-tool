@@ -66,7 +66,7 @@ canvas {
 .buttons {
   position: absolute;
   bottom: calc(100vh - 170px);
-  left: calc(100% - 150px);
+  left: calc(100% - 170px);
 }
 .buttons button {
   width: 100%;
