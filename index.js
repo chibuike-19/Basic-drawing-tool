@@ -165,5 +165,5 @@ slider.addEventListener("change", () => (brushWidth = slider.value));
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("touchmove", drawing);
 canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener('touchstart', startDraw);
+canvas.addEventListener('touchend', startDraw);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
