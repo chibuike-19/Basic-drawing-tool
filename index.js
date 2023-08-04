@@ -104,10 +104,9 @@ toolBtn.forEach((btn) => {
   });
 });
 
-
 colorPicker.addEventListener("change", () => {
   colorPicker.parentElement.style.backgroundColor = colorPicker.value;
-  selectedColor = colorPicker.value
+  selectedColor = colorPicker.value;
   colorPicker.parentElement.click();
 });
 
@@ -161,9 +160,81 @@ shapesImg.forEach((img) => {
     mainImg.src = img.src;
   });
 });
+
+canvas.addEventListener(
+  "touchstart",
+  function (e) {
+    prevMouseX = getTouchPos(canvas, e, "x");
+    prevMouseY = getTouchPos(canvas, e, "y")
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousedown", {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+    canvas.dispatchEvent(mouseEvent);
+  },
+  false
+);
+canvas.addEventListener(
+  "touchend",
+  function (e) {
+    var mouseEvent = new MouseEvent("mouseup", {});
+    canvas.dispatchEvent(mouseEvent);
+  },
+  false
+);
+canvas.addEventListener(
+  "touchmove",
+  function (e) {
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousemove", {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+    canvas.dispatchEvent(mouseEvent);
+  },
+  false
+);
+
+// Get the position of a touch relative to the canvas
+function getTouchPos(canvasDom, touchEvent, position) {
+  var rect = canvasDom.getBoundingClientRect();
+  if (position == "x") {
+    return touchEvent.touches[0].clientX - rect.left;
+  } else {
+    return touchEvent.touches[0].clientY - rect.top;
+  }
+}
+
+document.body.addEventListener(
+  "touchstart",
+  function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+document.body.addEventListener(
+  "touchend",
+  function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+document.body.addEventListener(
+  "touchmove",
+  function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+
 slider.addEventListener("change", () => (brushWidth = slider.value));
 canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("touchmove", drawing);
 canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener('touchend', startDraw);
 canvas.addEventListener("mouseup", () => (isDrawing = false));
