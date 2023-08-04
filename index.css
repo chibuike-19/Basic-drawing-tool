@@ -170,4 +170,7 @@ canvas {
     display: flex;
     width: 95%;
   }
+  canvas {
+    width: 80%;
+  }
 }
