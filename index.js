@@ -50,12 +50,13 @@ const drawRectangle = (e) => {
 };
 
 const drawCircle = (e) => {
+  // ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
-
-  let radius = Math.sqrt(
+  let radius = parseInt(Math.sqrt(
     Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
-  );
-  ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+  ));
+  // console.log(radius)
+  ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI, false);
   ctx.stroke();
 };
 
