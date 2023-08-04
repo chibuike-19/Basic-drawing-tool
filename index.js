@@ -213,7 +213,7 @@ document.body.addEventListener(
       e.preventDefault();
     }
   },
-  false
+  {passive: false}
 );
 document.body.addEventListener(
   "touchend",
@@ -222,7 +222,7 @@ document.body.addEventListener(
       e.preventDefault();
     }
   },
-  false
+  {passive: false}
 );
 document.body.addEventListener(
   "touchmove",
@@ -231,7 +231,7 @@ document.body.addEventListener(
       e.preventDefault();
     }
   },
-  false
+  {passive: false}
 );
 
 slider.addEventListener("change", () => (brushWidth = slider.value));
